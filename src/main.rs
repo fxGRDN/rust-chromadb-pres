@@ -348,7 +348,172 @@ impl ChromaGeminiApp {
         Ok(relevant_docs)
     }
 
-    // Helper function to safely truncate strings at character boundaries
+    pub async fn search_with_gemini_context(
+        &self,
+        collection: &ChromaCollection,
+        query: &str,
+        n_results: Option<usize>,
+    ) -> Result<String> {
+        println!("🔍 Finding relevant documents...");
+        let relevant_docs = self.search_with_bert_embeddings(collection, query, n_results).await?;
+
+        if relevant_docs.is_empty() {
+            return Ok("No relevant documents found to answer your question.".to_string());
+        }
+
+        let mut context_parts = vec![];
+        for (i, (document, similarity, _doc_index, file_path)) in relevant_docs.iter().enumerate() {
+            let doc_preview = Self::safe_truncate(document, 1000);
+            context_parts.push(format!(
+                "Document {} (Similarity: {:.3}, Source: {}):\n{}",
+                i + 1, similarity, file_path, doc_preview
+            ));
+        }
+
+        let context = context_parts.join("\n\n─────────────────────────────────────\n\n");
+
+        let enhanced_prompt = format!(
+            "Based on the following relevant documents, please answer this question: {}\n\n\
+            CONTEXT FROM RELEVANT DOCUMENTS:\n\
+            {}\n\n\
+            Please provide a comprehensive answer based on the context above. \
+            If the context doesn't contain enough information to fully answer the question, \
+            please mention what information is available and what might be missing.",
+            query, context
+        );
+
+        println!("🤖 Generating contextual response with Gemini...");
+        let response = self.gemini.generate_content(&enhanced_prompt).await?;
+
+        Ok(response)
+    }
+
+    pub async fn interactive_contextual_search(&self, collection: &ChromaCollection) -> Result<()> {
+        use std::io::{self, Write};
+
+        println!("🚀 Interactive Contextual Search with Gemini + BERT");
+        println!("This will find relevant documents and use them as context for Gemini responses.\n");
+
+        loop {
+            print!("Enter your question (or 'quit' to exit): ");
+            io::stdout().flush()?;
+
+            let mut input = String::new();
+            io::stdin().read_line(&mut input)?;
+            
+            let query = input.trim();
+            if query.is_empty() {
+                continue;
+            }
+            
+            if query.to_lowercase() == "quit" {
+                break;
+            }
+
+            println!("\n{}", "═".repeat(80));
+            println!("❓ Question: {}", query);
+            println!("{}", "═".repeat(80));
+
+            match self.search_with_gemini_context(collection, query, Some(3)).await {
+                Ok(response) => {
+                    println!("\n🤖 Gemini Response:");
+                    println!("{}", "─".repeat(60));
+                    println!("{}", response);
+                    println!("{}", "─".repeat(60));
+                }
+                Err(e) => {
+                    println!("❌ Error: {}", e);
+                }
+            }
+
+            match self.search_with_bert_embeddings(collection, query, Some(3)).await {
+                Ok(relevant_docs) => {
+                    if !relevant_docs.is_empty() {
+                        println!("\n📚 Sources used:");
+                        for (i, (_document, similarity, _doc_index, file_path)) in relevant_docs.iter().enumerate() {
+                            println!("  {}. {} (Similarity: {:.3})", i + 1, file_path, similarity);
+                        }
+                    }
+                }
+                Err(_) => {}
+            }
+            
+            println!("\n");
+        }
+
+        Ok(())
+    }
+
+    pub async fn interactive_detailed_search(&self, collection: &ChromaCollection) -> Result<()> {
+        use std::io::{self, Write};
+
+        println!("🚀 Detailed Interactive Search with Document Context");
+        println!("This will show relevant documents AND provide Gemini's contextual response.\n");
+
+        loop {
+            print!("Enter your question (or 'quit' to exit, 'mode' to switch modes): ");
+            io::stdout().flush()?;
+
+            let mut input = String::new();
+            io::stdin().read_line(&mut input)?;
+            
+            let query = input.trim();
+            if query.is_empty() {
+                continue;
+            }
+            
+            if query.to_lowercase() == "quit" {
+                break;
+            }
+
+            if query.to_lowercase() == "mode" {
+                println!("Switching to simple contextual mode...");
+                return self.interactive_contextual_search(collection).await;
+            }
+
+            println!("\n{}", &"═".repeat(80));
+            println!("❓ Question: {}", query);
+            println!("{}", "═".repeat(80));
+
+            match self.search_with_bert_embeddings(collection, query, Some(3)).await {
+                Ok(relevant_docs) => {
+                    if !relevant_docs.is_empty() {
+                        println!("\n📄 Relevant Documents Found:");
+                        println!("{}", "─".repeat(60));
+                        
+                        for (i, (document, similarity, _doc_index, file_path)) in relevant_docs.iter().enumerate() {
+                            println!("📁 Document {} (Similarity: {:.3})", i + 1, similarity);
+                            println!("📂 Source: {}", file_path);
+                            
+                            let preview = Self::safe_truncate(document, 200);
+                            println!("📖 Preview: {}", preview);
+                            println!("{}", "─".repeat(40));
+                        }
+                    }
+                }
+                Err(e) => {
+                    println!("❌ Error finding documents: {}", e);
+                }
+            }
+
+            match self.search_with_gemini_context(collection, query, Some(3)).await {
+                Ok(response) => {
+                    println!("\n🤖 Gemini's Contextual Answer:");
+                    println!("{}", "─".repeat(60));
+                    println!("{}", response);
+                    println!("{}", "─".repeat(60));
+                }
+                Err(e) => {
+                    println!("❌ Error generating response: {}", e);
+                }
+            }
+            
+            println!("\n");
+        }
+
+        Ok(())
+    }
+
     fn safe_truncate(text: &str, max_chars: usize) -> String {
         if text.chars().count() <= max_chars {
             text.to_string()
@@ -389,7 +554,6 @@ impl ChromaGeminiApp {
                             println!("📁 File: {}", file_path);
                             println!("🔢 Document Index: {}", doc_index);
                             
-                            // Use safe truncation instead of byte slicing
                             let preview = Self::safe_truncate(document, 300);
                             println!("📖 Content Preview: {}", preview);
                             
@@ -447,8 +611,32 @@ async fn main() -> Result<()> {
         println!("❌ No txt files found in 'faktury' directory.");
     }
 
-    println!("\n🔍 Starting interactive BERT similarity search...");
-    app.interactive_bert_search(&collection).await?;
+    println!("\n🎯 Choose search mode:");
+    println!("1. Contextual search (Gemini with document context)");
+    println!("2. Detailed search (Show documents + Gemini response)");
+    println!("3. Simple BERT search (Documents only)");
+    
+    use std::io::{self, Write};
+    print!("Enter choice (1-3): ");
+    io::stdout().flush()?;
+    
+    let mut choice = String::new();
+    io::stdin().read_line(&mut choice)?;
+    
+    match choice.trim() {
+        "1" => {
+            println!("\n🔍 Starting contextual search with Gemini...");
+            app.interactive_contextual_search(&collection).await?;
+        }
+        "2" => {
+            println!("\n🔍 Starting detailed search mode...");
+            app.interactive_detailed_search(&collection).await?;
+        }
+        "3" | _ => {
+            println!("\n🔍 Starting simple BERT similarity search...");
+            app.interactive_bert_search(&collection).await?;
+        }
+    }
 
     Ok(())
 }
