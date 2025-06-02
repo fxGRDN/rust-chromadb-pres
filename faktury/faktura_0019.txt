@@ -1,0 +1,15 @@
+FAKTURA NR 0019
+Data: 2025-05-24
+Odbiorca: Spółdzielnia Wawrzynkiewicz-Pietrasz Sp. z o.o. Sp.k.
+Adres: aleja Sybiraków 46, 22-356 Opole
+
+Zamówienie:
+- Pizza Wegetariańska x 1 @ 31.99 zł = 31.99 zł
+- Pizza Margherita x 5 @ 28.99 zł = 144.95 zł
+- Pizza Pepperoni x 5 @ 35.99 zł = 179.95 zł
+- Pizza Cztery Sery x 1 @ 34.99 zł = 34.99 zł
+- Pizza Wegetariańska x 4 @ 31.99 zł = 127.96 zł
+- Pizza Hawajska x 5 @ 32.99 zł = 164.95 zł
+
+Suma: 684.79 zł
+----------------------------------------

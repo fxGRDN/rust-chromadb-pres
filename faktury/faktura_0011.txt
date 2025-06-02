@@ -1,0 +1,12 @@
+FAKTURA NR 0011
+Data: 2025-05-04
+Odbiorca: Grupa Raźny s.c.
+Adres: pl. Wspólna 670, 47-258 Zduńska Wola
+
+Zamówienie:
+- Pizza Margherita x 1 @ 28.99 zł = 28.99 zł
+- Pizza Wegetariańska x 1 @ 31.99 zł = 31.99 zł
+- Pizza Margherita x 5 @ 28.99 zł = 144.95 zł
+
+Suma: 205.93 zł
+----------------------------------------

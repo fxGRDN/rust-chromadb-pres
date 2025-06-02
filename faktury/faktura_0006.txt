@@ -1,0 +1,13 @@
+FAKTURA NR 0006
+Data: 2025-05-28
+Odbiorca: Lampa-Trzpil s.c.
+Adres: al. Zachodnia 58/11, 01-302 Krotoszyn
+
+Zamówienie:
+- Pizza Hawajska x 2 @ 32.99 zł = 65.98 zł
+- Pizza Capricciosa x 4 @ 33.99 zł = 135.96 zł
+- Pizza Capricciosa x 1 @ 33.99 zł = 33.99 zł
+- Pizza Hawajska x 1 @ 32.99 zł = 32.99 zł
+
+Suma: 268.92 zł
+----------------------------------------

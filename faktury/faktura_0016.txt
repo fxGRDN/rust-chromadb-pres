@@ -1,0 +1,17 @@
+FAKTURA NR 0016
+Data: 2025-06-01
+Odbiorca: Pajek Sp. z o.o.
+Adres: aleja Żwirki i Wigury 075, 54-221 Bartoszyce
+
+Zamówienie:
+- Pizza Cztery Sery x 5 @ 34.99 zł = 174.95 zł
+- Pizza Margherita x 5 @ 28.99 zł = 144.95 zł
+- Pizza Hawajska x 1 @ 32.99 zł = 32.99 zł
+- Pizza Wegetariańska x 1 @ 31.99 zł = 31.99 zł
+- Pizza Cztery Sery x 2 @ 34.99 zł = 69.98 zł
+- Pizza Cztery Sery x 1 @ 34.99 zł = 34.99 zł
+- Pizza Cztery Sery x 5 @ 34.99 zł = 174.95 zł
+- Pizza Capricciosa x 4 @ 33.99 zł = 135.96 zł
+
+Suma: 800.76 zł
+----------------------------------------

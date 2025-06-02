@@ -1,0 +1,14 @@
+FAKTURA NR 0012
+Data: 2025-05-12
+Odbiorca: PPUH Bryzek i syn s.c.
+Adres: plac Tulipanowa 35/19, 29-769 Ostrów Wielkopolski
+
+Zamówienie:
+- Pizza Cztery Sery x 2 @ 34.99 zł = 69.98 zł
+- Pizza Hawajska x 2 @ 32.99 zł = 65.98 zł
+- Pizza Cztery Sery x 4 @ 34.99 zł = 139.96 zł
+- Pizza Capricciosa x 2 @ 33.99 zł = 67.98 zł
+- Pizza Pepperoni x 3 @ 35.99 zł = 107.97 zł
+
+Suma: 451.87 zł
+----------------------------------------

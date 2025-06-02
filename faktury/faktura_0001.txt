@@ -1,0 +1,14 @@
+FAKTURA NR 0001
+Data: 2025-05-30
+Odbiorca: Gabinety Basa Sp.j.
+Adres: plac Warszawska 581, 83-143 Skarżysko-Kamienna
+
+Zamówienie:
+- Pizza Capricciosa x 5 @ 33.99 zł = 169.95 zł
+- Pizza Hawajska x 2 @ 32.99 zł = 65.98 zł
+- Pizza Hawajska x 4 @ 32.99 zł = 131.96 zł
+- Pizza Cztery Sery x 2 @ 34.99 zł = 69.98 zł
+- Pizza Hawajska x 5 @ 32.99 zł = 164.95 zł
+
+Suma: 602.82 zł
+----------------------------------------

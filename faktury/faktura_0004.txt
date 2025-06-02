@@ -1,0 +1,15 @@
+FAKTURA NR 0004
+Data: 2025-05-17
+Odbiorca: PPUH Chomik
+Adres: ulica Radosna 593, 85-356 Wałbrzych
+
+Zamówienie:
+- Pizza Capricciosa x 4 @ 33.99 zł = 135.96 zł
+- Pizza Wegetariańska x 1 @ 31.99 zł = 31.99 zł
+- Pizza Wegetariańska x 4 @ 31.99 zł = 127.96 zł
+- Pizza Hawajska x 4 @ 32.99 zł = 131.96 zł
+- Pizza Capricciosa x 5 @ 33.99 zł = 169.95 zł
+- Pizza Capricciosa x 4 @ 33.99 zł = 135.96 zł
+
+Suma: 733.78 zł
+----------------------------------------

@@ -1,0 +1,13 @@
+FAKTURA NR 0018
+Data: 2025-05-29
+Odbiorca: Klebba s.c.
+Adres: al. Szpitalna 37, 97-114 Płońsk
+
+Zamówienie:
+- Pizza Cztery Sery x 5 @ 34.99 zł = 174.95 zł
+- Pizza Capricciosa x 3 @ 33.99 zł = 101.97 zł
+- Pizza Pepperoni x 4 @ 35.99 zł = 143.96 zł
+- Pizza Margherita x 3 @ 28.99 zł = 86.97 zł
+
+Suma: 507.85 zł
+----------------------------------------

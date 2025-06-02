@@ -1,0 +1,13 @@
+FAKTURA NR 0015
+Data: 2025-05-13
+Odbiorca: Dybaś Sp. z o.o. Sp.k.
+Adres: ulica Rolna 12/55, 69-978 Wrocław
+
+Zamówienie:
+- Pizza Wegetariańska x 5 @ 31.99 zł = 159.95 zł
+- Pizza Cztery Sery x 2 @ 34.99 zł = 69.98 zł
+- Pizza Pepperoni x 3 @ 35.99 zł = 107.97 zł
+- Pizza Hawajska x 4 @ 32.99 zł = 131.96 zł
+
+Suma: 469.86 zł
+----------------------------------------

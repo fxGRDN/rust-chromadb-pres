@@ -1,0 +1,15 @@
+FAKTURA NR 0017
+Data: 2025-05-24
+Odbiorca: Spółdzielnia Wawrzyn
+Adres: pl. Wczasowa 21, 37-789 Mława
+
+Zamówienie:
+- Pizza Capricciosa x 5 @ 33.99 zł = 169.95 zł
+- Pizza Capricciosa x 3 @ 33.99 zł = 101.97 zł
+- Pizza Hawajska x 3 @ 32.99 zł = 98.97 zł
+- Pizza Cztery Sery x 2 @ 34.99 zł = 69.98 zł
+- Pizza Hawajska x 3 @ 32.99 zł = 98.97 zł
+- Pizza Wegetariańska x 5 @ 31.99 zł = 159.95 zł
+
+Suma: 699.79 zł
+----------------------------------------

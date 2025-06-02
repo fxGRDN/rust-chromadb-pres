@@ -1,0 +1,12 @@
+FAKTURA NR 0007
+Data: 2025-05-03
+Odbiorca: Gabinety Madejczyk-Fitas Sp.k.
+Adres: aleja Głogowa 50/58, 46-856 Śrem
+
+Zamówienie:
+- Pizza Capricciosa x 1 @ 33.99 zł = 33.99 zł
+- Pizza Hawajska x 4 @ 32.99 zł = 131.96 zł
+- Pizza Capricciosa x 5 @ 33.99 zł = 169.95 zł
+
+Suma: 335.90 zł
+----------------------------------------

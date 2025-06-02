@@ -1,0 +1,15 @@
+FAKTURA NR 0020
+Data: 2025-05-25
+Odbiorca: Byzdra-Stosio i syn s.c.
+Adres: aleja Paderewskiego 430, 74-792 Głogów
+
+Zamówienie:
+- Pizza Hawajska x 2 @ 32.99 zł = 65.98 zł
+- Pizza Hawajska x 3 @ 32.99 zł = 98.97 zł
+- Pizza Hawajska x 4 @ 32.99 zł = 131.96 zł
+- Pizza Hawajska x 4 @ 32.99 zł = 131.96 zł
+- Pizza Margherita x 3 @ 28.99 zł = 86.97 zł
+- Pizza Pepperoni x 2 @ 35.99 zł = 71.98 zł
+
+Suma: 587.82 zł
+----------------------------------------

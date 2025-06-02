@@ -1,0 +1,14 @@
+FAKTURA NR 0008
+Data: 2025-05-21
+Odbiorca: Stowarzyszenie Grochola Sp.j.
+Adres: al. Morska 692, 83-831 Bochnia
+
+Zamówienie:
+- Pizza Cztery Sery x 3 @ 34.99 zł = 104.97 zł
+- Pizza Cztery Sery x 5 @ 34.99 zł = 174.95 zł
+- Pizza Hawajska x 3 @ 32.99 zł = 98.97 zł
+- Pizza Hawajska x 4 @ 32.99 zł = 131.96 zł
+- Pizza Hawajska x 5 @ 32.99 zł = 164.95 zł
+
+Suma: 675.80 zł
+----------------------------------------

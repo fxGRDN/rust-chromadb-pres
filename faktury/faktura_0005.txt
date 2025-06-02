@@ -1,0 +1,16 @@
+FAKTURA NR 0005
+Data: 2025-05-23
+Odbiorca: Fundacja Franków i syn s.c.
+Adres: plac Pogodna 569, 66-965 Toruń
+
+Zamówienie:
+- Pizza Pepperoni x 1 @ 35.99 zł = 35.99 zł
+- Pizza Pepperoni x 5 @ 35.99 zł = 179.95 zł
+- Pizza Cztery Sery x 4 @ 34.99 zł = 139.96 zł
+- Pizza Cztery Sery x 4 @ 34.99 zł = 139.96 zł
+- Pizza Hawajska x 3 @ 32.99 zł = 98.97 zł
+- Pizza Hawajska x 4 @ 32.99 zł = 131.96 zł
+- Pizza Wegetariańska x 4 @ 31.99 zł = 127.96 zł
+
+Suma: 854.75 zł
+----------------------------------------

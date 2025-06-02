@@ -1,0 +1,14 @@
+FAKTURA NR 0013
+Data: 2025-05-15
+Odbiorca: Fundacja Świerad
+Adres: aleja Bursztynowa 849, 13-082 Kalisz
+
+Zamówienie:
+- Pizza Pepperoni x 2 @ 35.99 zł = 71.98 zł
+- Pizza Pepperoni x 4 @ 35.99 zł = 143.96 zł
+- Pizza Cztery Sery x 5 @ 34.99 zł = 174.95 zł
+- Pizza Cztery Sery x 3 @ 34.99 zł = 104.97 zł
+- Pizza Capricciosa x 5 @ 33.99 zł = 169.95 zł
+
+Suma: 665.81 zł
+----------------------------------------
