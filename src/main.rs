@@ -11,6 +11,8 @@ use std::fs;
 use std::sync::{Arc, Mutex};
 use tokio::task;
 
+// UWAGA! CAŁOŚĆ PRAKTYCZNIE VIBE KODOWANA
+
 #[derive(Debug, Serialize, Deserialize)]
 struct GeminiRequest {
     contents: Vec<GeminiContent>,
@@ -373,12 +375,11 @@ impl ChromaGeminiApp {
         let context = context_parts.join("\n\n─────────────────────────────────────\n\n");
 
         let enhanced_prompt = format!(
-            "Based on the following relevant documents, please answer this question: {}\n\n\
-            CONTEXT FROM RELEVANT DOCUMENTS:\n\
+            "Na podstawie podanego kontekstu odpowiedz na pytanie : {}\n\n\
+            KONTEKST Z DOKUMENTÓW:\n\
             {}\n\n\
-            Please provide a comprehensive answer based on the context above. \
-            If the context doesn't contain enough information to fully answer the question, \
-            please mention what information is available and what might be missing.",
+            Podaj odpowiedź w formie zwięzłej i rzeczowej, unikając powtórzeń i nieistotnych informacji.
+            Jeśli WSZYSTKIE dokumenty nie są w żaden sposób związane z pytaniem, odpowiedz 'Nie wiem'.",
             query, context
         );
 
